@@ -1,0 +1,39 @@
+info:
+  app:
+    description: Simple feature toggle web interface
+
+spring:
+  output:
+    ansi:
+      enabled: always
+
+  application:
+    name:  Feature Toggle Web
+    resources:
+      cache-period: 604800
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: postgres
+    password: postgres
+
+  security:
+    user:
+      name: admin
+      password: admin
+
+freemarker:
+  template-loader-path: classpath:/templates
+  suffix: .ftl
+
+server:
+  port: 9812
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css,image/x-icon
+
+feature-toggle-table:
+  name: feature_toggles
+  key: key
+  value: value
+
